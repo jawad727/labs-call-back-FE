@@ -53,9 +53,10 @@ class Profile extends Component {
       <Navigation />
 
       {this.state.loading ? <div className="recording-loader loader">
-                <h1>Griipe</h1>
                 <br />
-                <Spinner style={{ width: '3rem', height: '3rem' }} />
+                <div className="centerSpinner">
+                <Spinner style={{ width: '2.5rem', height: '2.5rem' }} />
+                </div>
                 </div> : 
       <div>
       <h2>Your Complaint History</h2>
@@ -67,9 +68,9 @@ class Profile extends Component {
         <img className="CardImg" src={`${this.user.photoURL}`}/>
       </div>
 
-        <p>{this.user.displayName}</p>
-          <p>Total Upvotes: 0</p>
-          <button className="EditBtn" onClick={this.ProfilePush}>Edit Profile</button>
+        <p className="ProfileFontss" >{this.user.displayName}</p>
+          <p className="ProfileFontss">Total Upvotes: 0</p>
+          <button className="EditBtn FormFonts" onClick={this.ProfilePush}>Edit Profile</button>
         </div>
 
       {this.state.complaintById[0] ? null : <h4 className="noReview">You have no reviews yet..</h4>}

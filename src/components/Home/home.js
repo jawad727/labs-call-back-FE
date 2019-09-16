@@ -22,10 +22,15 @@ const HomePage = () => (
   </AuthUserContext.Consumer>
 );
 
+const hostURL = "http://localhost:5000/api/routes/posts"
+
+
+
 class HomePageWithAuth extends Component {
   state = {
     complaintFeed: [],
-    loading: true
+    loading: true,
+    cardLoader: 6
   };
 
 
@@ -34,13 +39,16 @@ class HomePageWithAuth extends Component {
   };
 
   componentDidMount() {
+    // setTimeout(() => this.setState({isLoading: false}), 1000);
     this.complaints();
-    setTimeout(() => this.setState({isLoading: false}), 1000);
+
   }
 
-  componentDidUnmount(){
-    this.complaints();
-  }
+  // componentDidUnmount(){
+  //   this.complaints();
+  // }
+
+
 
   user = firebase.auth().currentUser;
 
@@ -57,7 +65,7 @@ class HomePageWithAuth extends Component {
 
   complaints = () => {
     axios
-      .get("https://griipe.herokuapp.com/api/routes/posts")
+      .get(hostURL)
       .then(response => {
         this.setState({ complaintFeed: response.data, loading: false });
       })
@@ -71,12 +79,14 @@ class HomePageWithAuth extends Component {
   sortedArray = () => {return this.state.complaintFeed.map((card, i) => {return <ComplaintCard complaintsCall={this.complaints}  key={i} card={card} />;}) }
 
   render() {
+
     if(this.state.isLoading===true) {
       return (
       <div className="recording-loader loader">
-        <h1>Griipe</h1>
         <br />
-        <Spinner style={{ width: '3rem', height: '3rem' }} />
+        <div className="centerSpinner">
+                <Spinner style={{ width: '2.5rem', height: '2.5rem' }} />
+                </div>
       </div>)
     };
     return (
@@ -84,11 +94,12 @@ class HomePageWithAuth extends Component {
       
         <Navigation />
 
-        {this.state.loading ? 
-        <div className="recording-loader loader">
-                <h1>Griipe</h1>
+        {this.state.loading ? <div className="recording-loader loader">
+                
                 <br />
-                <Spinner style={{ width: '3rem', height: '3rem' }} />
+                <div className="centerSpinner">
+                <Spinner style={{ width: '2.5rem', height: '2.5rem' }} />
+                </div>
         </div> 
         :
         <div className="Homepage Container">
@@ -100,8 +111,10 @@ class HomePageWithAuth extends Component {
           <h1 class="worstReviewed">Lowest Reviewed Businesses</h1>
           <div class="HomeWrapper">
             <div>
-              {this.sortedArray().reverse()}
+              {this.sortedArray().reverse().slice(0, this.state.cardLoader)}
+              {this.state.cardLoader > this.state.complaintFeed.length ? null : <button onClick={() => {this.setState({cardLoader: this.state.cardLoader + 5})}} className="LoadMoreFeed" >Load More</button> }
             </div>
+
             <div class="BarGraph">
               <Chart StoreArray={this.StoreNamess()} />
             </div>
@@ -117,12 +130,14 @@ class HomePageWithAuth extends Component {
 class HomePageNoAuth extends Component {
   state = {
     complaintFeed: [],
-    loading: true
+    loading: true,
+    cardLoader: 6
   };
 
   componentDidMount() {
-    this.complaints();
-    setTimeout(() => this.setState({isLoading: false}), 1000);
+
+    // this.complaints();
+    setTimeout(() => this.complaints(), 1000);
   }
 
   ProfilePush = () => {
@@ -136,8 +151,9 @@ class HomePageNoAuth extends Component {
   };
 
   complaints = () => {
+    setTimeout(() => this.setState({isLoading: false}), 1000);
     axios
-      .get("https://griipe.herokuapp.com/api/routes/posts")
+      .get(hostURL)
       .then(response => {
         this.setState({ complaintFeed: response.data, loading: false });
       })
@@ -150,9 +166,11 @@ class HomePageNoAuth extends Component {
     if(this.state.isLoading===true) {
       return (
       <div className="recording-loader loader">
-        <h1>Griipe</h1>
+  
         <br />
-        <Spinner style={{ width: '3rem', height: '3rem' }} />
+        <div className="centerSpinner">
+                <Spinner style={{ width: '2.5rem', height: '2.5rem' }} />
+                </div>
       </div>)
     };
       return (
@@ -160,9 +178,11 @@ class HomePageNoAuth extends Component {
           <Navigation />
 
           {this.state.loading ? <div className="recording-loader loader">
-                <h1>Griipe</h1>
+            
                 <br />
-                <Spinner style={{ width: '3rem', height: '3rem' }} />
+                <div className="centerSpinner">
+                <Spinner style={{ width: '2.5rem', height: '2.5rem' }} />
+                </div>
                 </div> :
 
               <div className='Homepage Container'>
@@ -182,7 +202,8 @@ class HomePageNoAuth extends Component {
                   <div>                    
                       {this.state.complaintFeed.map((card, i) => {
                           return <ComplaintCardNoAuth key={i} card={card}/> 
-                      })}
+                      }).slice(0, this.state.cardLoader)}
+                      {this.state.cardLoader > this.state.complaintFeed.length ? null : <button onClick={() => {this.setState({cardLoader: this.state.cardLoader + 5})}} className="LoadMoreFeed" >Load More</button> }
                   </div>
                   <div class="BarGraph" >
                     <Chart StoreArray={this.StoreNamess()}/>

@@ -5,6 +5,8 @@ import './ComplaintCard.css';
 import MaterialIcon, {colorPalette} from 'material-icons-react';
 import axios from 'axios';
 
+const baseURL = "http://localhost:5000/api/routes/posts/"
+
   export default class ComplaintCard extends Component {
       state = {
           upvote: this.props.card.upVote + 1,
@@ -14,13 +16,13 @@ import axios from 'axios';
 
     upvote = (e) => {
 
-        axios.put(`https://griipe.herokuapp.com/api/routes/posts/${this.props.card.id}`, {
+        axios.put(`${baseURL}${this.props.card.id}`, {
             DisplayName: this.props.card.DisplayName ,
             Email: this.props.card.Email ,
             UID: this.props.card.UID ,
             StoreName: this.props.card.StoreName ,
             StoreLocation: this.props.card.StoreLocation ,
-            tweet: this.props.card.tweet,
+            text: this.props.card.text,
             upVote: this.state.upvote
         })
         .then(res => this.props.complaintsCall())
@@ -31,13 +33,13 @@ import axios from 'axios';
 
     downvote = (e) => {
         
-        axios.put(`https://griipe.herokuapp.com/api/routes/posts/${this.props.card.id}`, {
+        axios.put(`${baseURL}${this.props.card.id}`, {
             DisplayName: this.props.card.DisplayName ,
             Email: this.props.card.Email ,
             UID: this.props.card.UID ,
             StoreName: this.props.card.StoreName ,
             StoreLocation: this.props.card.StoreLocation ,
-            tweet: this.props.card.tweet,
+            text: this.props.card.text,
             upVote: this.state.downvote
         })
         .then(res => this.props.complaintsCall())
@@ -48,15 +50,16 @@ import axios from 'axios';
 
 
     render() {
+        console.log(this.props.card)
         return (
             <div>
                 <Card className="card-container">
 
                         <div class="upvote-container">
                             <div>
-                            <i class="fas fa-chevron-up" onClick={this.upvote}></i>
+                            <i class="fas fa-chevron-up cardClicker" onClick={this.upvote}></i>
                         <p class="upvote">{this.props.card.upVote}</p>
-                            <i class="fas fa-chevron-down" onClick={this.downvote}></i>
+                            <i class="fas fa-chevron-down cardClicker" onClick={this.downvote}></i>
                             </div>
                         </div>
 
@@ -69,7 +72,7 @@ import axios from 'axios';
                         <CardText className="cardAddress">{`${this.props.card.StoreLocation}`}</CardText>
                         </div>
 
-                        <CardText className="complaintText"><strong>{`${this.props.card.DisplayName}:`}</strong>{` ${this.props.card.tweet}`}</CardText>
+                        <CardText className="complaintText"><strong>{`${this.props.card.DisplayName}:`}</strong>{` ${this.props.card.text}`}</CardText>
                         
 
                         </div>

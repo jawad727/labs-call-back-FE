@@ -7,6 +7,8 @@ import RaisedButton from "material-ui/RaisedButton";
 import { Spinner, Fade, NavLink } from "reactstrap";
 import CloudDoneIcon from "@material-ui/icons/CloudDone";
 
+var siteURL = "http://localhost:5000/api/routes"
+
 class Form4WithAuth extends Component {
   state = {
     isLoading: true
@@ -26,9 +28,8 @@ class Form4WithAuth extends Component {
       StorePhoneNumber: this.props.StorePhone,
       StoreGoogleRating: this.props.StoreGoogleRating,
       StoreWebsite: this.props.StoreWebsite,
-      tweet: this.props.confirmationTranscription,
-      upVote: 0,
-      downVote: 0
+      text: this.props.confirmationTranscription,
+      upVote: 0
     };
     let time = new Date();
     let tweetdata = {
@@ -46,7 +47,7 @@ class Form4WithAuth extends Component {
     }
 
     axios
-      .post(`https://griipe.herokuapp.com/api/routes/makepost`, data)
+      .post(`${siteURL}/makepost`, data)
       .then(res => {
         console.log("It worked 1:", res);
       })
@@ -59,22 +60,24 @@ class Form4WithAuth extends Component {
     if (this.state.isLoading === true) {
       return (
         <div className="recording-loader loader">
-          <h1>Griipe</h1>
+
           <br />
-          <Spinner style={{ width: "3rem", height: "3rem" }} />
+          <div className="centerSpinner">
+                <Spinner style={{ width: '2.5rem', height: '2.5rem' }} />
+                </div>
         </div>
       );
     }
     return (
       <MuiThemeProvider>
         <Fade in={this.state.fadeIn} tag="h5" className="mt-3 form-container2">
-          <h1 className="form-container-header">Confirmation</h1>
+          <h1 className="form-container-header fontchange1">Confirmation</h1>
           <div className="conf-align">
             <div className="confirmation-container">
               <span className="confirmation-span">
                 <CloudDoneIcon color="error" />
                 <p className="confirmation-input">
-                  <strong>Store:</strong> {this.props.StoreName}
+                  <strong>Business:</strong> {this.props.StoreName}
                 </p>
               </span>
             </div>

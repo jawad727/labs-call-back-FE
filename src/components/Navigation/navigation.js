@@ -50,21 +50,21 @@ class NavigationAuth extends Component {
           <NavbarToggler onClick={this.toggle} />
 
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto fontchange2" navbar>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+                <DropdownToggle className="fontchange3" nav caret>
                   Profile
                 </DropdownToggle>
                 <DropdownMenu right>
                   <Link to="/profile">
-                    <DropdownItem>View Complaint History</DropdownItem>
+                    <DropdownItem className="fontchange2">View Complaint History</DropdownItem>
                   </Link>
                   <Link to="/edit-profile">
-                    <DropdownItem>Edit Profile</DropdownItem>
+                    <DropdownItem className="fontchange2">Edit Profile</DropdownItem>
                   </Link>
                   <DropdownItem divider />
                   <DropdownItem>
-                    <SignOutButton />
+                    <SignOutButton className="fontchange2"/>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>

@@ -4,6 +4,8 @@ import { Card, CardImg, CardText, CardBody,
 import './ComplaintCard.css';
 import MaterialIcon, {colorPalette} from 'material-icons-react';
 
+const baseURL = "http://localhost:5000/api/routes/posts/"
+
   export default class ComplaintCard extends Component {
     render() {
         return (
@@ -12,9 +14,9 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
 
                         <div class="upvote-container">
                             <div>
-                            <i class="fas fa-chevron-up"></i>
+                            <i class="fas fa-chevron-up cardClicker"></i>
                         <p class="upvote">{this.props.card.upVote}</p>
-                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-down cardClicker"></i>
                             </div>
                         </div>
 
@@ -27,7 +29,7 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
                         <CardText className="cardAddress">{`${this.props.card.StoreLocation}`}</CardText>
                         </div>
 
-                        <CardText className="complaintText"><strong>Anonymous:</strong>{` ${this.props.card.tweet}`}</CardText>
+                        <CardText className="complaintText"><strong>{`${this.props.card.DisplayName}:`}</strong>{` ${this.props.card.text}`}</CardText>
 
 
                         </div>

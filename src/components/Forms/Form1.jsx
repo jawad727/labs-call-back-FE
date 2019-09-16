@@ -66,9 +66,11 @@ class Form1 extends Component {
     if (this.state.isLoading === true) {
       return (
         <div className="recording-loader loader">
-          <h1>Griipe</h1>
+
           <br />
-          <Spinner style={{ width: "3rem", height: "3rem" }} />
+          <div className="centerSpinner">
+                <Spinner style={{ width: '2.5rem', height: '2.5rem' }} />
+                </div>
         </div>
       );
     }
@@ -78,15 +80,19 @@ class Form1 extends Component {
         <div class="searchbar-container">
           <Fade tag="h5" className="mt-3">
             <div className="form1-cont">
-              <h1 class="searchTitle">Search For A Company Below:</h1>
+              <h1 id="searchTextMobile" class="searchTitle RTSlist ">Search For A Company Below:</h1>
               <LocationSearch
-                className="locationSearcher"
+                className="locationSearcher RTSlist marginzero"
                 triggerUpdatePlaces={this.updateGooglePlaces}
               />
+              
+
+              <div className="form1image"/>
+
               <br />
 
               <RaisedButton
-                className="search-Button"
+                className="search-Button RTSlist"
                 label="Continue"
                 primary={true}
                 style={styles.button}

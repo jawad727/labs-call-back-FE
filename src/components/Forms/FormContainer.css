@@ -24,8 +24,9 @@
 
 .form-container-header {
     text-align: center;
-    
-    margin-bottom: 6%;
+    margin-right: 20%;
+    margin-bottom: 20px;
+    font-family: 'Alegreya Sans SC';
 }
 
 /* .searchbar-container {
@@ -103,6 +104,7 @@ margin-bottom: 2%;
 
 .recording-header {
     margin: 1rem auto 0;
+    font-family: 'Didact Gothic';
 }
 
 .loader {
@@ -137,8 +139,17 @@ margin-bottom: 2%;
     width: 75%;
 }
 
+.fontchange1 {
+    font-family: 'Didact Gothic';
+}
+
 .conf-align {
     width: 75%;
+    margin-top: 50px;
+    border: 1px solid lightgrey;
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
 }
 
 .re-record-header {
@@ -174,6 +185,20 @@ margin-bottom: 2%;
     
 }
 
+.form1image {
+    position: absolute;
+    top: 250px;
+    /* border: 1px solid red; */
+    background-image:url('./earth2.png');
+    height: 500px;
+    width: 1000px;
+    background-size: cover;
+}
+
+.marginzero {
+    height: 0px !important;
+}
+
 .signin h2 {
     background: #9CE37D;
     margin: 0px;
@@ -186,3 +211,45 @@ margin-bottom: 2%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.tweetsendcontainer {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    background: white;
+    padding: 20px;
+    margin-right: 20%;
+}
+
+@media (max-width: 1000px) {
+
+    .form1image {
+        width: 90%
+    }
+}
+
+
+@media (max-width: 533px) {
+
+    .form1image {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 770px) {
+    .form1-cont h1 {
+        margin-top: 0px;
+    }
+}
+
+
+
+
+@media (max-height: 800px) { 
+
+    .form1image {
+        height: 50%;
+    }
+
+}

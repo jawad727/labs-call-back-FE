@@ -12,6 +12,16 @@
   height: 100vh;
 }
 
+.landingSlogan {
+  font-family: 'Alegreya Sans SC';
+}
+
+.RTSlist {
+  font-family: 'Didact Gothic';
+}
+
+
+
 .topcontainer {
   
   height: 100%;
@@ -58,16 +68,24 @@ header {
 .logo-two {
   position: absolute;
   
-  width: 15vw;
   
   padding: 0px 9px 9px 6px;
-  margin-left: 5%;
+  
+}
+
+.doubleButton {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  margin-top: 50px;
+  padding-right: 105px;
 }
 
 .start-btn-top {
     position: absolute;
     top: 55px;
-    left: 85%;
+    /* left: 85%; */
     width: 100px !important;
 }
 .login-btn-top {
@@ -76,7 +94,7 @@ header {
     width: 75px;
     height: 35px;
     top: 55px;
-    left: 80%;
+    /* left: 80%; */
     text-decoration: none;
     text-align: center;
     padding-top: 5px;
@@ -96,16 +114,17 @@ header {
 }
 
 .logo-two img {
-    width: 70%;
-    margin-top: 20%;
+    width: 190px;
+    margin-top: 50px;
+    margin-left: 105px
 }
 
 .startBox-container {
     display: flex;
     justify-content: center;
     align-content: center;
-  width: 25%;
-  height: 50%;
+  width: 460px;
+  height: 100%;
 }
 
 .startBox {
@@ -138,7 +157,7 @@ header {
   }
 
   .startBox-two img {
-    width: 80%;
+    width: 320px;
   }
 
 .startBox ul {
@@ -153,6 +172,7 @@ header {
     margin-top: 30px;
     font-size: 34px;
     color: #E9F1F7;
+    padding-left: 30px;
 }
 
 .start-btn {
@@ -206,6 +226,26 @@ header {
   height: auto;
 }
 
+.doubleButton button {
+  
+  /* border: 1px solid black; */
+
+  padding: 5px 15px;
+}
+
+.doubleButtonSingle {
+  background: #3f2a68;
+  border: 1px solid white;
+  border-right: 1px solid lightgrey;
+  color: white;
+}
+
+.doubleButtonSingle2 {
+  background: #9CE37D;
+  border: 2px solid black;
+  border-left: 0px solid white;
+}
+
 .start-content li {
     text-align: left;
     font-size: 26px;
@@ -249,15 +289,33 @@ header {
   height: 500px;
 } */
 
+.signin h2 {
+  color: white !important;
+  font-weight: bold
+}
+
+.loader {
+  margin: 0px!important;
+}
+
+
 .innerSignin {
   background: rgb(238, 238, 238);
-  border-radius: 15px;
+  border-radius: 5px;
   border: 1px solid lightgrey;
   width: 300px;
   height: 320px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   overflow: hidden;
 }
+
+.centerSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
 
 
 @media (max-width: 860px) {
@@ -266,12 +324,43 @@ header {
   }
 }
 
+
+
 @media (max-width: 860px) {
   .toppage {
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
   }
+
+  .logo-two img {
+    margin-top: 50px;
+    margin-left: 0px;
+    padding-left: 20%;
+}
+
+  .start-content {
+    display: none;
+  }
+
+  .startBox h1 {
+    margin-bottom: 40px;
+  }
+
+  .startBox button {
+    margin-top: 50px;
+  }
+
+  .doubleButton {
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    margin-top: 60px;
+    padding-right: 105px;
+  }
+
+
 
   .slogan {
     margin: 0px;
@@ -294,12 +383,11 @@ header {
   }
 
 
-
   .startBox {
       justify-content: center;
       text-align: center;
       line-height: 0;
-      margin-top: 70px;
+      margin-top: 170px;
       
   }
 
@@ -322,8 +410,7 @@ header {
   }
 
   .startBox-container {
-    width: 80%;
-    height: 50%;
+
     margin: 0;
   }
 
@@ -348,12 +435,12 @@ header {
 }
 
 .logo-two {
-  position: absolute;
   
-  width: 35vw;
+  
+  /* width: 35vw; */
   
   padding: 12px 9px 9px 6px;
-  margin-left: 5%;
+  /* margin-left: 5%; */
 }
 
 

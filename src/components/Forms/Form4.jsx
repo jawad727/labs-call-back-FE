@@ -39,9 +39,11 @@ class Form4WithoutAuth extends Component {
     if (this.state.isLoading === true) {
       return (
         <div className="recording-loader loader">
-          <h1>Griipe</h1>
+
           <br />
-          <Spinner style={{ width: "3rem", height: "3rem" }} />
+          <div className="centerSpinner">
+                <Spinner style={{ width: '2.5rem', height: '2.5rem' }} />
+                </div>
         </div>
       );
     }
@@ -49,13 +51,13 @@ class Form4WithoutAuth extends Component {
     return (
       <MuiThemeProvider>
         <Fade tag="h5" className="mt-3 form-container2">
-          <h1 className="form-container-header">Confirmation</h1>
+          <h1 className="form-container-header fontchange1">Confirmation</h1>
           <div className="conf-align">
             <div className="confirmation-container">
               <span className="confirmation-span">
                 <CloudDoneIcon color="error" />
                 <p className="confirmation-input">
-                  <strong>Store:</strong> {this.props.StoreName}
+                  <strong>Business:</strong> {this.props.StoreName}
                 </p>
               </span>
             </div>
