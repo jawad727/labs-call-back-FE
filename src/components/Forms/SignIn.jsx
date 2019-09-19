@@ -6,7 +6,7 @@ import "../Landing/LandingPage.css";
 import axios from 'axios';
 import Navigation from '../Navigation/navigation.js';
 
-var postURL = "http://localhost:5000/api/routes"
+var postURL = "https://griipe-backend.herokuapp.com/api/routes"
 
 class SignInConfirmation extends Component {
       state = {
