@@ -22,7 +22,7 @@ const HomePage = () => (
   </AuthUserContext.Consumer>
 );
 
-const hostURL = "http://localhost:5000/api/routes/posts"
+const hostURL = "https://griipe-backend.herokuapp.com/api/routes/posts"
 
 
 

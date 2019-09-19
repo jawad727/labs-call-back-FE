@@ -7,7 +7,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import { Spinner, Fade, NavLink } from "reactstrap";
 import CloudDoneIcon from "@material-ui/icons/CloudDone";
 
-var siteURL = "http://localhost:5000/api/routes"
+var siteURL = "https://griipe-backend.herokuapp.com/api/routes"
 
 class Form4WithAuth extends Component {
   state = {
