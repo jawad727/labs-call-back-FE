@@ -6,6 +6,8 @@ import "../Landing/LandingPage.css";
 import axios from 'axios';
 import Navigation from '../Navigation/navigation.js';
 
+var postURL = "http://localhost:5000/api/routes"
+
 class SignInConfirmation extends Component {
       state = {
         docid: null
@@ -37,9 +39,8 @@ class SignInConfirmation extends Component {
               StorePhoneNumber: this.props.StorePhone,
               StoreGoogleRating: this.props.StoreGoogleRating,
               StoreWebsite: this.props.StoreWebsite,
-              tweet: this.props.confirmationTranscription,
+              text: this.props.confirmationTranscription,
               upVote: 0,
-              downVote: 0
               }
               let time = new Date();
               let tweetdata = {
@@ -52,7 +53,7 @@ class SignInConfirmation extends Component {
               }
               
               axios
-              .post(`https://griipe.herokuapp.com/api/routes/makepost`, data)
+              .post(`${postURL}/makepost`, data)
               .then(res => {
                 console.log("It worked 1:", res);
               })

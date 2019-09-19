@@ -8,6 +8,7 @@ import { withAuthorization } from '../Session/session.js';
 import ComplaintCard from '../Feeds/ComplaintCard.js';
 import { Spinner, Fade } from 'reactstrap';
 
+const hostURL = "http://localhost:5000/api/routes/posts"
 
 class Profile extends Component {
 
@@ -33,7 +34,7 @@ class Profile extends Component {
     
   complaints = () => {
     axios
-    .get(`https://griipe.herokuapp.com/api/routes/posts/${this.user.uid}`)
+    .get(`${hostURL}/${this.user.uid}`)
     .then(response => {
       this.setState(() => ({ complaintById: response.data, loading: false }));
     })
