@@ -5,7 +5,7 @@ import './ComplaintCard.css';
 import MaterialIcon, {colorPalette} from 'material-icons-react';
 import axios from 'axios';
 
-const baseURL = "http://localhost:5000/api/routes/posts/"
+const baseURL = "https://griipe-backend.herokuapp.com/api/routes/posts/"
 
   export default class ComplaintCard extends Component {
       state = {
