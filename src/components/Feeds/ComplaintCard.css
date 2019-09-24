@@ -96,10 +96,10 @@
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 720px) {
     .card-container{
-        width: 90%;
-        margin: 13px auto;
+        width: 99%;
+        margin: 0px auto;
         border-radius: 10px;
     }
 
@@ -107,5 +107,15 @@
         text-align: center;
         margin-top: 20px;
     }
+
+    .LoadMoreFeed {
+        width: 100%;
+    }
+
+    .complaintButton {
+      
+    }
+
+
 }
 
