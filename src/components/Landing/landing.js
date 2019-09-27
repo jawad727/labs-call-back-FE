@@ -66,16 +66,17 @@ class LandingPage extends Component {
           
 
           <div className="logo-two">
-            <img className='GriipeLogo' src={require("./imgs/brandmark-designcoor.png")} />
+            <img id="griipeLogoWide" className='GriipeLogo' src={require("./imgs/brandmark-designcoor.png")} />
           </div>
 
           <div className="doubleButton">
-       
-            <button className="doubleButtonSingle2 RTSlist" onClick={e => {this.props.history.push("/home")}}>Complaints</button>
-        
 
+          <img id="griipeLogoMobile" className='GriipeLogo' src={require("./imgs/brandmark-designcoor.png")} />
+
+            <div className="doubleButtonInner">
+            <button className="doubleButtonSingle2 RTSlist" onClick={e => {this.props.history.push("/home")}}>Complaints</button>
             <button className="doubleButtonSingle RTSlist" onClick={e => {this.props.history.push("/login")}}>Login</button>
-    
+            </div>
           </div>
 
           <div className="topcontainer-wrapper">
