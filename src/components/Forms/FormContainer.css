@@ -196,7 +196,8 @@ margin-bottom: 2%;
 }
 
 .marginzero {
-    height: 0px !important;
+    /* height: 0px !important;
+    width: 90% !important; */
 }
 
 .signin h2 {
@@ -220,6 +221,14 @@ margin-bottom: 2%;
     margin-right: 20%;
 }
 
+.searchBarDivContainer div {
+    width: 100% !important;
+   }
+
+   .searchBarDivContainer {
+    width: 75%;
+}
+
 @media (max-width: 1000px) {
 
     .form1image {
@@ -233,6 +242,16 @@ margin-bottom: 2%;
     .form1image {
         display: none;
     }
+
+    .searchBarDivContainer div {
+        width: 100% !important;
+       }
+
+    .searchBarDivContainer {
+        width: 90%;
+    }
+
+
 
 }
 
