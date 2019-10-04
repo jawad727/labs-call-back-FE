@@ -131,7 +131,7 @@ h1 {
 }
 
 
-@media (max-width: 1115px) {
+@media (max-width: 1130px) {
 
     .HomeWrapper {
     flex-direction: column-reverse;

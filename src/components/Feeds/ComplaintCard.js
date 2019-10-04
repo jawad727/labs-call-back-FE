@@ -65,7 +65,7 @@ const baseURL = "https://griipe-backend.herokuapp.com/api/routes/posts/"
 
                     <CardBody>
                         
-                    <div>
+                    <div className="cardTextFont">
                         <div class="titleAddy">
                         <CardText className="cardTitle">{` ${this.props.card.StoreName}`}</CardText>
 
