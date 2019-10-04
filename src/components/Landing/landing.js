@@ -80,7 +80,7 @@ class LandingPage extends Component {
           </div>
 
           <div className="topcontainer-wrapper">
-            <section className="toppage" />
+
 
             <div className="startBox-container">
               <div className="startBox">
@@ -96,13 +96,16 @@ class LandingPage extends Component {
                   <li class="RTSlist" >- Send A Review</li>
                 </ul>
                 <br/>
-                <Link to="/complaint-form">
+                <Link className="LandingWideButton" to="/complaint-form">
+                  <button class="start-btn RTSlist">Get Started</button>
+                </Link>
+                <Link className="LandingMobileButton" to="/home">
                   <button class="start-btn RTSlist">Get Started</button>
                 </Link>
               </div>
             </div>
 
-            <div className="startBox-container">
+            <div className="startBox-container2">
               <div className="startBox-two">
                 <div className="start-content">
                   <img src={require("./imgs/mushroom.png")} />

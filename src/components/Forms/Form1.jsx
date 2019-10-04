@@ -9,6 +9,7 @@ import LocationSearch from "./LocationSearchInput";
 import { Spinner, Fade } from "reactstrap";
 // import MapContainer from './GoogleMaps';
 
+
 class Form1 extends Component {
   state = {
     StoreName: "",
@@ -81,10 +82,12 @@ class Form1 extends Component {
           <Fade tag="h5" className="mt-3">
             <div className="form1-cont">
               <h1 id="searchTextMobile" class="searchTitle RTSlist ">Search For A Company Below:</h1>
+              <div className="searchBarDivContainer">
               <LocationSearch
                 className="locationSearcher RTSlist marginzero"
                 triggerUpdatePlaces={this.updateGooglePlaces}
               />
+              </div>
               
 
               <div className="form1image"/>
