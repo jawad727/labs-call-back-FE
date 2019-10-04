@@ -96,7 +96,10 @@ class LandingPage extends Component {
                   <li class="RTSlist" >- Send A Review</li>
                 </ul>
                 <br/>
-                <Link to="/complaint-form">
+                <Link className="LandingWideButton" to="/complaint-form">
+                  <button class="start-btn RTSlist">Get Started</button>
+                </Link>
+                <Link className="LandingMobileButton" to="/home">
                   <button class="start-btn RTSlist">Get Started</button>
                 </Link>
               </div>

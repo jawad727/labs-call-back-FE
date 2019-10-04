@@ -20,7 +20,9 @@
   font-family: 'Didact Gothic';
 }
 
-
+.LandingMobileButton {
+  display: none;
+}
 
 .topcontainer {
   
@@ -337,6 +339,15 @@ header {
 
 
 @media (max-width: 860px) {
+
+  .LandingWideButton {
+    display: none;
+  }
+
+  .LandingMobileButton {
+    display: block
+  }
+
   .toppage {
     flex-direction: column;
     align-items: center;
@@ -376,8 +387,6 @@ header {
     margin-top: 60px;
     padding-right: 105px;
   }
-
-
 
   .slogan {
     margin: 0px;
@@ -502,7 +511,7 @@ header {
 
   .doubleButtonInner {
     margin-right: 0px;
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
   }
