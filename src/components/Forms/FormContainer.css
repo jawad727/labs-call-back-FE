@@ -201,7 +201,8 @@ margin-bottom: 2%;
 }
 
 .signin h2 {
-    background: #9CE37D;
+    /* background: #9CE37D; */
+    background-image: linear-gradient(#B7E0A5, #9CE37D);
     margin: 0px;
     overflow: hidden;
     border-bottom: 1px solid lightgrey;
@@ -209,7 +210,8 @@ margin-bottom: 2%;
     padding: 10px 0;
     color: #343434;
     font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Alegreya Sans SC';
+    font-weight: 700;
 }
 
 .tweetsendcontainer {

@@ -68,7 +68,7 @@ class SignInConfirmation extends Component {
                 <div class="signin">
                   
                 <div class="innerSignin">
-                    <h2>Sign In</h2>
+                    <h2>sign in</h2>
                     <StyledFirebaseAuth 
                     uiConfig={this.uiConfig} 
                     firebaseAuth={firebase.auth()} />

@@ -145,6 +145,7 @@ header {
 
   margin-right: 25px;
   overflow: hidden;
+  
 }
 
 .startBox-two {
@@ -294,7 +295,7 @@ header {
 } */
 
 .signin h2 {
-  color: white !important;
+  /* color: white !important; */
   font-weight: bold
 }
 
@@ -304,7 +305,8 @@ header {
 
 
 .innerSignin {
-  background: rgb(238, 238, 238);
+  /* background: rgb(238, 238, 238); */
+  background-image: radial-gradient(lightgrey, white);
   border-radius: 5px;
   border: 1px solid lightgrey;
   width: 300px;

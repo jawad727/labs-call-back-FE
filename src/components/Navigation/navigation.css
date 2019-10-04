@@ -8,9 +8,7 @@
 }
 
 .centered {
-
     width: 302px;
-
 }
 
 .fontchange2 {
@@ -71,3 +69,20 @@
     color: white;
     text-decoration: none;
 }
+
+.navbar {
+    justify-content: left;
+
+}
+
+.profileThumbnailNav {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%;
+    /* border: 1px solid lightgrey; */
+}
+
+/* @media (min-width: 768px) {
+
+} */

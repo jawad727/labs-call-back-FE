@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import firebase from "firebase";
 import {
   Collapse,
   Navbar,
@@ -37,6 +38,8 @@ class NavigationAuth extends Component {
     });
   }
 
+  user = firebase.auth().currentUser;
+
   render() {
     return (
       <div>
@@ -47,12 +50,13 @@ class NavigationAuth extends Component {
               <img src={require("../Landing/imgs/brandmark-designcoor.png")} />
             </div>
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
+          {/* <NavbarToggler onClick={this.toggle} /> */}
 
-          <Collapse isOpen={this.state.isOpen} navbar>
+          {/* <Collapse isOpen={this.state.isOpen} navbar> */}
             <Nav className="ml-auto fontchange2" navbar>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle className="fontchange3" nav caret>
+                  <img className="profileThumbnailNav" src={this.user.photoURL} /> 
                   Profile
                 </DropdownToggle>
                 <DropdownMenu right>
@@ -69,7 +73,7 @@ class NavigationAuth extends Component {
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
-          </Collapse>
+          {/* </Collapse> */}
         </Navbar>
       </div>
     );
@@ -85,7 +89,7 @@ const NavigationNonAuth = () => {
             <img src={require("../Landing/imgs/brandmark-designcoor.png")} />
           </div>
         </NavbarBrand>
-        <NavbarToggler />
+        {/* <NavbarToggler /> */}
         <Collapse navbar>
           <Nav className="ml-auto" navbar />
         </Collapse>
