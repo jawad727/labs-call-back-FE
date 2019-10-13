@@ -49,6 +49,8 @@
     font-size: 2rem;
 }
 
+
+
 .navbar-light .navbar-brand {
     color: #E9F1F7;
 }
@@ -77,11 +79,23 @@
 
 .profileThumbnailNav {
     width: 40px;
-    height: 40px;
-    margin-right: 15px;
-    border-radius: 50%;
+  
+   
+    /* border-radius: 50%; */
     /* border: 1px solid lightgrey; */
 }
+
+.profPicWraper {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+  
+}
+
+
+
+
 
 /* @media (min-width: 768px) {
 
