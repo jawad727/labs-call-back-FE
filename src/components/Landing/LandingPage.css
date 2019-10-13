@@ -16,6 +16,10 @@
   font-family: 'Alegreya Sans SC';
 }
 
+.doubleButtonMobile {
+  display: none;
+}
+
 .RTSlist {
   font-family: 'Didact Gothic';
 }
@@ -470,6 +474,7 @@ header {
   display: none
   /* margin-left: 5%; */
 }
+}
 
 @media (max-width: 500px) {
 
@@ -491,6 +496,7 @@ header {
   .doubleButton {
     margin-top: 60px;
    padding-right: 0px;
+   height: auto;
   }
 
   .doubleButtonInner {
@@ -500,10 +506,32 @@ header {
 }
 
 @media (max-width: 400px) {
+
+  .doubleButtonMobile button {
+    padding: 5px 15px;
+    height: 40px;
+  }
+
+  .doubleButtonMobile {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    padding-right: 105px;
+   padding-right: 0px;
+   height: auto;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
   .doubleButton {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    display: none;
   }
 
   #griipeLogoMobile {
@@ -514,10 +542,16 @@ header {
 
   .doubleButtonInner {
     margin-right: 0px;
+    margin-top: 0px;
+  }
+
+  .startBox h1 {
+    padding-left: 0px;
+    font-size: 2rem;
     margin-top: 20px;
   }
 
   }
 
 
-}
+

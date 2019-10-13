@@ -84,6 +84,20 @@ class LandingPage extends Component {
 
             <div className="startBox-container">
               <div className="startBox">
+
+
+                <div className="doubleButtonMobile">
+
+          <img id="griipeLogoMobile" className='GriipeLogo' src={require("./imgs/brandmark-designcoor.png")} />
+
+            <div className="doubleButtonInner">
+            <button className="doubleButtonSingle2 RTSlist" onClick={e => {this.props.history.push("/home")}}>Complaints</button>
+            <button className="doubleButtonSingle RTSlist" onClick={e => {this.props.history.push("/login")}}>Login</button>
+            </div>
+          </div>
+
+
+
                 {" "}
                 <h1 class="landingSlogan"> A Bad Experience Should Never Go Unchecked </h1>
                 <br />

@@ -56,7 +56,9 @@ class NavigationAuth extends Component {
             <Nav className="ml-auto fontchange2" navbar>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle className="fontchange3" nav caret>
+                  <div className="profPicWraper">
                   <img className="profileThumbnailNav" src={this.user.photoURL} /> 
+                  </div>
                   Profile
                 </DropdownToggle>
                 <DropdownMenu right>

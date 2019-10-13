@@ -166,6 +166,7 @@ h1 {
     .worstReviewed {
         margin-bottom: 20px;
         margin-top: 20px;
+        
     }
 
    .button-container {
@@ -201,4 +202,20 @@ h1 {
     .profileCard {
         display: none;
     }
+}
+
+@media (max-width: 500px) {
+    .worstReviewed {
+        font-size: 2rem;
+    }
+
+    
+}
+
+@media (max-width: 400px) {
+
+    canvas {
+        /* height: 200px !important; */
+    }
+
 }
