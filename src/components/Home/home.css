@@ -214,8 +214,8 @@ h1 {
 
 @media (max-width: 400px) {
 
-    canvas {
-        /* height: 200px !important; */
-    }
+    /* canvas {
+        height: 300px !important;
+    } */
 
 }

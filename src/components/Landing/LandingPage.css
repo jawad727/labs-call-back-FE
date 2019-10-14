@@ -496,7 +496,7 @@ header {
   .doubleButton {
     margin-top: 60px;
    padding-right: 0px;
-   height: auto;
+   /* height: auto; */
   }
 
   .doubleButtonInner {
@@ -513,7 +513,6 @@ header {
   }
 
   .doubleButtonMobile {
-    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -521,7 +520,7 @@ header {
     margin-top: 20px;
     padding-right: 105px;
    padding-right: 0px;
-   height: auto;
+   height: 125px;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
