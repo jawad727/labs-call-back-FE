@@ -517,7 +517,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 50px;
     padding-right: 105px;
    padding-right: 0px;
    height: 125px;
@@ -548,6 +548,14 @@ header {
     padding-left: 0px;
     font-size: 2rem;
     margin-top: 20px;
+  }
+
+  .startBox {
+    justify-content: flex-start;
+  }
+
+  .start-btn {
+    margin-bottom: 50px;
   }
 
   }
