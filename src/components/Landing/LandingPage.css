@@ -335,11 +335,22 @@ header {
   display: none;
 }
 
+.signinMobileText {
+  margin-top: 20px;
+  width: 290px;
+  display: none;
+}
+
 
 @media (max-width: 860px) {
   .step-container p {
     margin-left: 60px;
   }
+
+  .signinMobileText {
+    display: block;
+  }
+
 }
 
 
@@ -350,9 +361,7 @@ header {
     display: none;
   }
 
-  .LandingMobileButton {
-    display: block
-  }
+
 
   .toppage {
     flex-direction: column;
@@ -487,6 +496,10 @@ header {
 }
 
 @media (max-width: 600px) {
+
+  .LandingMobileButton {
+    display: block
+  }
 
   #griipeLogoMobile {
     margin: 0px;

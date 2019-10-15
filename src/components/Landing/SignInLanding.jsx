@@ -30,13 +30,16 @@ class SignInConfirmation extends Component {
             return (
               <>
                 <Navigation />
+                
                 <div class="signin">
+                
                   <div class="innerSignin">
                     <h2>sign in</h2>
                     <StyledFirebaseAuth 
                     uiConfig={this.uiConfig} 
                     firebaseAuth={firebase.auth()} />
                     </div>
+                    <p className="signinMobileText"> Check us out on desktop or laptop for full experience</p>
                 </div>
               </>  
             );

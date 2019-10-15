@@ -63,7 +63,9 @@ class SignUpFormBase extends Component {
     username === '';
 
     return (
+      
       <form onSubmit={this.onSubmit}>
+        
         <input
           name="username"
           value={username}
