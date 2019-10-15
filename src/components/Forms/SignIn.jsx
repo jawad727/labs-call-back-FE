@@ -72,8 +72,9 @@ class SignInConfirmation extends Component {
                     <StyledFirebaseAuth 
                     uiConfig={this.uiConfig} 
                     firebaseAuth={firebase.auth()} />
-                </div>
                     
+                </div>
+                <p className="signinMobileText"> Check us out on desktop or laptop for full experience</p>
                 </div>
               </>  
             );
