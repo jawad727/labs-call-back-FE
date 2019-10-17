@@ -47,16 +47,17 @@ class TwitterConfirm extends Component {
 
     {this.props.history.location.state !== undefined ? <h1 className="form-container-header">Your Tweet Has Been Sent</h1> : <h1 className="form-container-header">There was an error sending the tweet</h1> }
           <div className="tweetsendcontainer">
+          
           <div className="confirmation-container">
             <span className="confirmation-span">
-            <CloudDoneIcon color='error'/>
-            <p className="confirmation-input"><strong>Link: </strong> <a href="https://twitter.com/callcomplain1">https://twitter.com/callcomplain1</a></p>
+              <CloudDoneIcon color='error'/>            
+              {this.props.history.location.state !== undefined ? (<p className="confirmation-input"><strong>Tweet: </strong> <br /> " {this.props.history.location.state.status} "</p>) : (<p className="confirmation-input"><strong>Tweet:</strong> " We're sorry, but the tweet didn't send because Twitter has one of the most unusable API's we've ever seen"</p>)}
             </span>
           </div>
           <div className="confirmation-container">
             <span className="confirmation-span">
-              <CloudDoneIcon color='error'/>            
-              {this.props.history.location.state !== undefined ? (<p className="confirmation-input"><strong>Tweet:</strong> " {this.props.history.location.state.status} "</p>) : (<p className="confirmation-input"><strong>Tweet:</strong> " We're sorry, but the tweet didn't send because Twitter has one of the most unusable API's we've ever seen"</p>)}
+            <CloudDoneIcon color='error'/>
+            <p className="confirmation-input"><strong>Link:  </strong> <a href="https://twitter.com/callcomplain1">Click here to see the tweet</a></p>
             </span>
           </div>
           <Link to="/home" >
