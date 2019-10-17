@@ -60,7 +60,7 @@ class Profile extends Component {
                 </div>
                 </div> : 
       <div>
-      <h2>Your Complaint History</h2>
+      <h2 className="ProileH2font">Your Complaint History</h2>
 
       <div className="ProfileWrap">
         

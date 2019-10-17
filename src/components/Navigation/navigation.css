@@ -4,7 +4,8 @@
     justify-content: space-evenly;
     background: #593C8F !important;
     padding: 20px 10px;
-    
+    height: 96px;
+
 }
 
 .centered {
@@ -14,6 +15,11 @@
 .fontchange2 {
     font-family: 'Didact Gothic';
     font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.fontchange2:hover {
+    text-decoration: none !important;
 }
 
 .fontchange3 {
@@ -26,14 +32,14 @@
     justify-content: left;
     
   
-    width: 250px;
+    width: 130px;
     
     padding: 0px;
     margin-left: 5%;
   }
 
   .logo-nav img {
-    width: 50%;
+    width: 100%;
     height: 10%;
     margin-top: 3%;
     margin-bottom: 3%;
@@ -78,7 +84,7 @@
 }
 
 .profileThumbnailNav {
-    width: 40px;
+    height: 40px;
   
    
     /* border-radius: 50%; */
@@ -86,17 +92,28 @@
 }
 
 .profPicWraper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
     width: 40px;
     height: 40px;
     overflow: hidden;
     border-radius: 50%;
-  
+    margin-right: 15px;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
 }
 
 
 
 
 
-/* @media (min-width: 768px) {
-
-} */
+@media (max-width: 768px) {
+    .navbar-nav .dropdown-menu {
+        position: absolute !important;
+        
+    }
+}
