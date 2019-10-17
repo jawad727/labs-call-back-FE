@@ -14,6 +14,7 @@
 .fontchange2 {
     font-family: 'Didact Gothic';
     font-size: 1.2rem;
+    text-decoration: none;
 }
 
 .fontchange3 {
@@ -78,7 +79,7 @@
 }
 
 .profileThumbnailNav {
-    width: 40px;
+    height: 40px;
   
    
     /* border-radius: 50%; */
@@ -86,11 +87,19 @@
 }
 
 .profPicWraper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
     width: 40px;
     height: 40px;
     overflow: hidden;
     border-radius: 50%;
-  
+    margin-right: 15px;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
 }
 
 
