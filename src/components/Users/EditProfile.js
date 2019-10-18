@@ -49,6 +49,23 @@ class EditProfile extends Component {
     editMenuAnimationClose = () => {
       TweenMax.to(".hidden", 1, { height: "0px"})
     }
+
+    
+    alarmFunction = () => {
+  
+      if (window.confirm("Are you sure you want to delete your account? Changes cannot be reverted.")) {
+        this.user.delete()
+                    .then(function() {
+                      console.log("user deleted");
+                    })
+                    .catch(function(error) {
+                      console.log(error);
+                    })
+      } else {
+        console.log("canceled")
+      }
+      
+    }
       
 
 
@@ -128,8 +145,8 @@ class EditProfile extends Component {
               <h3 class="red">Danger Zone</h3>
               <p>WARNING</p>
               <p>Once you delete your account you can not go back</p>
-              <button
-                onClick={(e) => this.setState({popup: true})}>
+              <button onClick={() => this.alarmFunction()}>
+                  {/* (e) => this.setState({popup: true}) */}
                 {" "}
                 Delete Account{" "}
               </button>
