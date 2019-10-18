@@ -568,6 +568,15 @@ header {
     margin-bottom: 50px;
   }
 
+  .startBox {
+    height: 100%;
+    justify-content: left;
+  }
+
+  .topcontainer-wrapper {
+    height: 150%;
+  }
+
   }
 
 
