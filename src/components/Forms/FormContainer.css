@@ -7,7 +7,7 @@
     background-color: #E9F1F7;
     margin-right: 20%;
     text-align: left;
-    width: 75%;
+    /* width: 75%; */
 }
 
 .form-container2 {
@@ -81,7 +81,7 @@
 }
 
 .mt-3.fade.show h1 {
-margin-bottom: 2%;
+/* margin-bottom: 2%; */
 }
 
 .google-search {
@@ -220,7 +220,7 @@ margin-bottom: 2%;
     width: 1000px;
     background: white;
     padding: 20px;
-    margin-right: 20%;
+    /* margin-right: 20%; */
 }
 
 .searchBarDivContainer div {
@@ -236,7 +236,8 @@ margin-bottom: 2%;
 }
 
 .form-container h1 {
-    margin: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #searchTextMobile {
@@ -263,6 +264,10 @@ margin-bottom: 2%;
     .conf-align {
         width: 100%;
         padding: 10px;
+    }
+
+    .tweetsendcontainer {
+        width: 90%;
     }
 }
 
@@ -291,7 +296,9 @@ margin-bottom: 2%;
 
 
 @media (max-width: 770px) {
-
+    .confirmation-container span {
+        font-size: 1.1rem;
+    }
 }
 
 

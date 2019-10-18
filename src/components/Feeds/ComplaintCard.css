@@ -73,6 +73,13 @@
 .complaintText {
     text-align: left;
     margin-top: 18px;
+    font-family: Calibri;
+    font-size: 1.1rem;
+    /* font-weight: 500; */
+}
+
+.StrongTextCard {
+    /* font-weight: 800; */
 }
 
 .complaintWrapper {

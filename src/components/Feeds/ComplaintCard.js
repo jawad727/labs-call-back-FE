@@ -72,7 +72,7 @@ const baseURL = "https://griipe-backend.herokuapp.com/api/routes/posts/"
                         <CardText className="cardAddress">{`${this.props.card.StoreLocation}`}</CardText>
                         </div>
 
-                        <CardText className="complaintText"><strong>{`${this.props.card.DisplayName}:`}</strong>{` ${this.props.card.text}`}</CardText>
+                        <CardText className="complaintText"><strong className="StrongTextCard">{`${this.props.card.DisplayName}:`}</strong>{` ${this.props.card.text}`}</CardText>
                         
 
                         </div>

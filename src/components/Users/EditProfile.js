@@ -4,6 +4,7 @@ import firebase from "firebase";
 import Navigation from "../Navigation/navigation";
 
 import { withAuthorization } from "../Session/session.js";
+import {TweenMax} from "gsap"
 
 class EditProfile extends Component {
 
@@ -41,14 +42,43 @@ class EditProfile extends Component {
         })
       }
 
+    editMenuAnimationOpen = () => { 
+        TweenMax.to(".hidden", 1, { height: "280px"})
+    }
+
+    editMenuAnimationClose = () => {
+      TweenMax.to(".hidden", 1, { height: "0px"})
+    }
+
+    
+    alarmFunction = () => {
+  
+      if (window.confirm("Are you sure you want to delete your account? Changes cannot be reverted.")) {
+        this.user.delete()
+                    .then(function() {
+                      console.log("user deleted");
+                    })
+                    .catch(function(error) {
+                      console.log(error);
+                    })
+      } else {
+        console.log("canceled")
+      }
+      
+    }
+      
+
 
     render() {
       console.log(this.user)
+      
     return (
       <>
         <Navigation />
 
         <div class="containerCenter">
+
+        {this.state.showInput ? this.editMenuAnimationOpen() : this.editMenuAnimationClose()}
 
           {this.state.popup ? 
           <div class="popup">
@@ -82,12 +112,12 @@ class EditProfile extends Component {
                   this.user.phoneNumber ? this.user.phoneNumber : "n/a"
                 }`}</p>
 
-                <button onClick={this.inputToggle}> Edit Profile </button>
+                <button onClick={() => {this.setState({ showInput: !this.state.showInput })}}> Edit Profile </button>
               </div>
             </div>
 
 
-            {this.state.showInput ? (
+            {/* {this.state.showInput ? ( */}
               <div class="hidden">
                 <form onSubmit={this.updateProf}>
                   <p class="text-centers">Display Name:</p>{" "}
@@ -106,17 +136,17 @@ class EditProfile extends Component {
                     name="photoURL"
                   />
 
-                  <button class="text-centers"> Update Profile </button>
+                  <button class="text-centers UpdateBtnMargin"> Update Profile </button>
                 </form>
               </div>
-            ) : null}
+            {/* ) : null} */}
 
             <div class="deleteContainer">
               <h3 class="red">Danger Zone</h3>
               <p>WARNING</p>
               <p>Once you delete your account you can not go back</p>
-              <button
-                onClick={(e) => this.setState({popup: true})}>
+              <button onClick={() => this.alarmFunction()}>
+                  {/* (e) => this.setState({popup: true}) */}
                 {" "}
                 Delete Account{" "}
               </button>
