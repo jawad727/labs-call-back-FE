@@ -291,15 +291,9 @@ header {
   z-index: 2;
 }
 
-/* .signin {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 500px;
-} */
 
 .signin h2 {
-  /* color: white !important; */
+  
   font-weight: bold
 }
 
@@ -309,7 +303,7 @@ header {
 
 
 .innerSignin {
-  /* background: rgb(238, 238, 238); */
+  
   background-image: radial-gradient(lightgrey, white);
   border-radius: 5px;
   border: 1px solid lightgrey;
@@ -446,8 +440,7 @@ header {
     justify-content: center;
     flex-direction: column;
     margin: 0;
-    /* min-height: 700px */
-    /* background-color:rgba(255,0,0,0.3); */
+
 
   }
 
