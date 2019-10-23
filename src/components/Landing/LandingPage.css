@@ -1,7 +1,4 @@
-/* html, body {
-    width: 100%;
-    height: 100%;
-  } */
+
 
   * {
       font-family: 'Roboto', sans-serif;
@@ -40,7 +37,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color:rgba(255,0,0,0.3); */
   background: rgb(89,62,138);
   background: radial-gradient(circle, rgba(89,62,138,1) 0%, rgba(45,30,72,1) 100%);
   box-shadow: 10px 10px 8px #888888;
@@ -49,7 +45,6 @@
 }
 
 header {
-  /* background: #F2441A; */
   width: 10%;
 
   background-color: rgba(55, 29, 42, 0.55);
@@ -57,7 +52,6 @@ header {
 }
 
 .toppage {
-  /* background-image: linear-gradient(#ff471a, red); */
   position: relative;
   display: flex;
   justify-content: left;
@@ -93,7 +87,6 @@ header {
 .start-btn-top {
     position: absolute;
     top: 55px;
-    /* left: 85%; */
     width: 100px !important;
 }
 .login-btn-top {
@@ -102,7 +95,6 @@ header {
     width: 75px;
     height: 35px;
     top: 55px;
-    /* left: 80%; */
     text-decoration: none;
     text-align: center;
     padding-top: 5px;
@@ -141,7 +133,6 @@ header {
   justify-content: center;
   align-content: center;
   position: relative;
-  /* background: url(./imgs/Group10003.png); */
   text-align: center;
   
   width: 100%;
@@ -230,14 +221,13 @@ header {
   text-align: center;
   color: #fff8e8;
   
-  
-  /* transform: translate(-50%, -50%); */
+
   height: auto;
 }
 
 .doubleButton button {
   
-  /* border: 1px solid black; */
+ 
 
   padding: 5px 15px;
 }
@@ -474,7 +464,6 @@ header {
 .logo-two {
   padding: 12px 9px 9px 6px;
   display: none
-  /* margin-left: 5%; */
 }
 }
 
@@ -502,7 +491,6 @@ header {
   .doubleButton {
     margin-top: 60px;
    padding-right: 0px;
-   /* height: auto; */
   }
 
   .doubleButtonInner {
@@ -541,7 +529,6 @@ header {
 
   #griipeLogoMobile {
     margin-left: 0px;
-    /* margin-top: 50px; */
     width: 150px;
   }
 
