@@ -10,6 +10,11 @@
     /* width: 75%; */
 }
 
+/* .buttonform1contaier .continue-btn button {
+ background-color: #593C8F !important;
+} */
+
+
 .form-container2 {
     display: flex;
     flex-direction: column;
