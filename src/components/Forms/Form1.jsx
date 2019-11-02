@@ -17,7 +17,8 @@ class Form1 extends Component {
     StorePhone: "",
     StoreWebsite: "",
     StoreGoogleRating: "",
-    isLoading: true
+    isLoading: true,
+    written: false
   };
 
   componentDidMount() {
@@ -94,6 +95,7 @@ class Form1 extends Component {
 
               <br />
 
+              <div className="buttonform1contaier">
               <RaisedButton
                 className="search-Button RTSlist"
                 label="Continue"
@@ -102,6 +104,8 @@ class Form1 extends Component {
                 onClick={this.continue}
                 className="continue-btn"
               />
+              </div>
+              
             </div>
           </Fade>
         </div>
