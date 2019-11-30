@@ -6,7 +6,7 @@ import "../Landing/LandingPage.css";
 import axios from 'axios';
 import Navigation from '../Navigation/navigation.js';
 
-var postURL = "https://griipe-backend.herokuapp.com/api/routes"
+var postURL = "https://hiffvl9nb9.execute-api.us-east-1.amazonaws.com/dev/post"
 
 class SignInConfirmation extends Component {
       state = {
@@ -53,7 +53,7 @@ class SignInConfirmation extends Component {
               }
               
               axios
-              .post(`${postURL}/makepost`, data)
+              .post(`${postURL}`, data)
               .then(res => {
                 console.log("It worked 1:", res);
               })

@@ -5,7 +5,7 @@ import './ComplaintCard.css';
 import MaterialIcon, {colorPalette} from 'material-icons-react';
 import axios from 'axios';
 
-const baseURL = "https://griipe-backend.herokuapp.com/api/routes/posts/"
+const baseURL = "https://hiffvl9nb9.execute-api.us-east-1.amazonaws.com/dev/post/"
 
   export default class ComplaintCard extends Component {
       state = {
@@ -17,13 +17,8 @@ const baseURL = "https://griipe-backend.herokuapp.com/api/routes/posts/"
     upvote = (e) => {
 
         axios.put(`${baseURL}${this.props.card.id}`, {
-            DisplayName: this.props.card.DisplayName ,
-            Email: this.props.card.Email ,
-            UID: this.props.card.UID ,
-            StoreName: this.props.card.StoreName ,
-            StoreLocation: this.props.card.StoreLocation ,
-            text: this.props.card.text,
-            upVote: this.state.upvote
+            paramName: "upVote",
+	        paramValue: this.state.upvote
         })
         .then(res => this.props.complaintsCall())
         .catch(err => this.props.complaintsCall())
@@ -34,13 +29,8 @@ const baseURL = "https://griipe-backend.herokuapp.com/api/routes/posts/"
     downvote = (e) => {
         
         axios.put(`${baseURL}${this.props.card.id}`, {
-            DisplayName: this.props.card.DisplayName ,
-            Email: this.props.card.Email ,
-            UID: this.props.card.UID ,
-            StoreName: this.props.card.StoreName ,
-            StoreLocation: this.props.card.StoreLocation ,
-            text: this.props.card.text,
-            upVote: this.state.downvote
+            paramName: "upVote",
+	        paramValue: this.state.downvote
         })
         .then(res => this.props.complaintsCall())
         .catch(err => this.props.complaintsCall())

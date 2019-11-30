@@ -7,7 +7,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import { Spinner, Fade, NavLink } from "reactstrap";
 import CloudDoneIcon from "@material-ui/icons/CloudDone";
 
-var siteURL = "https://griipe-backend.herokuapp.com/api/routes"
+var siteURL = "https://hiffvl9nb9.execute-api.us-east-1.amazonaws.com/dev/post"
 
 class Form4WithAuth extends Component {
   state = {
@@ -47,7 +47,7 @@ class Form4WithAuth extends Component {
     }
 
     axios
-      .post(`${siteURL}/makepost`, data)
+      .post(`https://hiffvl9nb9.execute-api.us-east-1.amazonaws.com/dev/post`, data)
       .then(res => {
         console.log("It worked 1:", res);
       })
