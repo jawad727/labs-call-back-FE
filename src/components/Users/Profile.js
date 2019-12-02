@@ -34,7 +34,7 @@ class Profile extends Component {
     
   complaints = () => {
     axios
-    .get(`${hostURL}/${this.user.uid}`)
+    .get(`https://hiffvl9nb9.execute-api.us-east-1.amazonaws.com/dev/poste/${this.user.uid}`)
     .then(response => {
       this.setState(() => ({ complaintById: response.data, loading: false }));
     })
