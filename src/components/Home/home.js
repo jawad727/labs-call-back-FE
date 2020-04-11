@@ -201,7 +201,9 @@ class HomePageNoAuth extends Component {
                       {this.state.cardLoader > this.state.complaintFeed.length ? null : <button onClick={() => {this.setState({cardLoader: this.state.cardLoader + 5})}} className="LoadMoreFeed" >Load More</button> }
                   </div>
                   <div class="BarGraph" >
-                    <Chart StoreArray={this.StoreNamess()}/>
+                    <div class="barContainer">
+                      <Chart StoreArray={this.StoreNamess()}/>
+                    </div>
                   </div>
                   </div>
                     </div> }

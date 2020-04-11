@@ -77,6 +77,8 @@ class Form1 extends Component {
       );
     }
 
+    // console.log("written", this.state.StoreName)
+
     return (
       <MuiThemeProvider>
         <div class="searchbar-container">
@@ -95,6 +97,8 @@ class Form1 extends Component {
 
               <br />
 
+              {  this.state.StoreName.length == 0 ? null : 
+
               <div className="buttonform1contaier">
               <RaisedButton
                 className="search-Button RTSlist"
@@ -104,7 +108,7 @@ class Form1 extends Component {
                 onClick={this.continue}
                 className="continue-btn"
               />
-              </div>
+              </div> }
               
             </div>
           </Fade>
