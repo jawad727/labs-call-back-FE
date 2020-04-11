@@ -60,13 +60,14 @@ h1 {
     width: 210px;
     height: 320px;
     border: 1px solid lightgrey;
-    border-radius: 15px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
     margin-right: 20px;
     overflow: hidden;
+    box-shadow: 2px 2px 5px lightgrey;
 }
 
 .profileCard img {
@@ -83,9 +84,7 @@ h1 {
 }
 
 .CardImg {
-
     width: 100%;
-
 }
 
 .imgdiv {
@@ -118,7 +117,7 @@ h1 {
     
 }
 
-.BarGraph div {
+.barContainer {
     padding: 5px 15px;
     /* width: 450px; */
     background: white;
