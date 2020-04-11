@@ -22,9 +22,7 @@ class Profile extends Component {
 
     
     componentDidMount() {
-    
       this.complaints();
-  
     }
 
   ProfilePush = () => {
@@ -46,14 +44,16 @@ class Profile extends Component {
 
 
     render() {
-      // console.log(this.user.uid)
+
     return (
       
         
       <div>
       <Navigation />
 
-      {this.state.loading ? <div className="recording-loader loader">
+      {this.state.loading ? 
+      
+      <div className="recording-loader loader">
                 <br />
                 <div className="centerSpinner">
                 <Spinner style={{ width: '2.5rem', height: '2.5rem' }} />
@@ -77,9 +77,11 @@ class Profile extends Component {
       {this.state.complaintById[0] ? null : <h4 className="noReview">You have no reviews yet..</h4>}
 
       <div className="ProfileCardList">
+
       {this.state.complaintById.map((card, i) => {
-      //   return <ComplaintCard card={card} key={this.state.id}/> 
+      
        return <ComplaintCard card={card}/> 
+
         })}
 
         </div>

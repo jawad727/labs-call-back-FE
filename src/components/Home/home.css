@@ -114,7 +114,18 @@ h1 {
 
 .BarGraph {
     margin-left: 10px;
-    width: 450px;  
+    width: 460px;
+    
+}
+
+.BarGraph div {
+    padding: 5px 15px;
+    /* width: 450px; */
+    background: white;
+    box-shadow: 2px 2px 5px lightgrey;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    margin-top: 9px;
 }
 
 .LoadMoreFeed {

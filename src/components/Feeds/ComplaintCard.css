@@ -10,10 +10,11 @@
 .card {
     box-sizing: border-box;
     overflow: hidden;
+    box-shadow: 2px 2px 5px lightgrey;
 }
 
 .card:hover {
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    /* box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); */
 }
 
 .cardClicker:hover {
@@ -103,12 +104,12 @@
 }
 
 
-
 @media (max-width: 720px) {
-    .card-container{
+    .card-container {
         width: 99%;
         margin: 5px auto;
         border-radius: 2px;
+        
     }
 
     .textContainer {
@@ -118,6 +119,7 @@
 
     .LoadMoreFeed {
         width: 99%;
+        /* box-shadow: 2px 2px 5px lightgrey; */
     }
 
     .complaintButton {

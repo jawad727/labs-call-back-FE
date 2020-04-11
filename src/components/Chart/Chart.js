@@ -1,42 +1,37 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+import './chart.css';
 
 
 const Chart = (props) => {
 
 
 
-    // console.log(props.StoreArray)
+   
 
     const obj = {}
 
     props.StoreArray.forEach(item => {
-if (!obj[item]) return obj[item] = 1
-obj[item] = obj[item] + 1;
-})
+    if (!obj[item]) return obj[item] = 1
+    obj[item] = obj[item] + 1;
+    })
 
-const arrayOfArrays = Object.entries(obj)
+    const arrayOfArrays = Object.entries(obj)
 
-arrayOfArrays.sort((a,b) => a[1] > b[1] ? -1 : 1 )
+    arrayOfArrays.sort((a,b) => a[1] > b[1] ? -1 : 1 )
 
-const labels = [];
-const data = [];
+    const labels = [];
+    const data = [];
 
-arrayOfArrays.forEach(item => {
-labels.push(item[0])
-data.push(item[1])
-})
-
-// console.log("labels: ", labels)
-// console.log("data: ", data)
-
-
+    arrayOfArrays.forEach(item => {
+    labels.push(item[0])
+    data.push(item[1])
+    })
 
     
         const chartData = {
             labels: labels.slice(0, 5),
             datasets: [{
-                // label: false,
                 data: data.slice(0, 5),
                 backgroundColor: [
                     'rgba(242, 125, 125, 1)',

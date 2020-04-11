@@ -44,12 +44,6 @@ class HomePageWithAuth extends Component {
 
   }
 
-  // componentDidUnmount(){
-  //   this.complaints();
-  // }
-
-
-
   user = firebase.auth().currentUser;
 
 
@@ -116,9 +110,12 @@ class HomePageWithAuth extends Component {
             </div>
 
             <div class="BarGraph">
-              <Chart StoreArray={this.StoreNamess()} />
+              <div class="barContainer">
+                <Chart StoreArray={this.StoreNamess()} />
+              </div>
             </div>
           </div>
+
             </div> }
 
               
@@ -135,8 +132,6 @@ class HomePageNoAuth extends Component {
   };
 
   componentDidMount() {
-
-    // this.complaints();
     setTimeout(() => this.complaints(), 1000);
   }
 
