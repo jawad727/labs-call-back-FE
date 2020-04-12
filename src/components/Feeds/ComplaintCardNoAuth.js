@@ -14,9 +14,9 @@ const baseURL = "http://localhost:5000/api/routes/posts/"
 
                         <div class="upvote-container">
                             <div>
-                            <i class="fas fa-chevron-up cardClicker"></i>
+                            <i class="fas fa-chevron-up cardClicker" onClick={() => {alert("Log In Before Rating Reviews")}}></i>
                         <p class="upvote">{this.props.card.upVote}</p>
-                            <i class="fas fa-chevron-down cardClicker"></i>
+                            <i class="fas fa-chevron-down cardClicker" onClick={() => {alert("Log In Before Rating Reviews")}}></i>
                             </div>
                         </div>
 

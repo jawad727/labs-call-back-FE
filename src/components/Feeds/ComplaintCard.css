@@ -15,6 +15,7 @@
 
 .cardClicker:hover {
     cursor: pointer;
+  
 }
 
 .playbuttons {
@@ -70,9 +71,8 @@
 .complaintText {
     text-align: left;
     margin-top: 18px;
-    /* font-family: Calibri; */
-    /* font-size: 1.1rem; */
-    /* font-weight: 500; */
+    font-family: Montserrat,sans-serif;
+    font-size: .97rem;
 }
 
 .StrongTextCard {
@@ -116,10 +116,6 @@
     .LoadMoreFeed {
         width: 99%;
         /* box-shadow: 2px 2px 5px lightgrey; */
-    }
-
-    .complaintButton {
-      
     }
 
     .card-container {

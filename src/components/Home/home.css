@@ -7,13 +7,15 @@
 }
 
 .complaintButton {
+    font-family: Montserrat,sans-serif;
+    font-weight: 900;
     position: relative;
     width: 300px;
     height: 40px;
-    font-family: 'Didact Gothic';
+    /* box-shadow: 2px 2px 5px black; */
     background-color: #9CE37D;
     color: #593C8F ;
-    border: 1px solid #E9F1F7;
+    border: 1px solid grey;
     text-decoration: none;
     z-index: 5;
     color: black;
@@ -137,6 +139,90 @@ h1 {
     font-family: 'Didact Gothic';
 }
 
+.sortBy {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 55px;
+    /* border: 1px solid lightgrey; */
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px lightgrey;
+    width: 40rem;
+    margin: 10px auto;
+    background: #593C8F;
+    margin-bottom: 15px;
+}
+
+.sorterWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.sorterWrapper:hover {
+    background: #432d6b;
+}
+
+.sortIcon {
+    color: white;
+}
+
+.sorterWrapper p {
+    margin: 0px;
+    margin-left: 10px;
+    color: white;
+}
+
+.highlightedTab {
+    background: #432d6b;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+}
+
+.HomeSignin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 460px;
+    height: 40px;
+    border: 1px solid lightgrey;
+    background: #9CE37D;
+    box-shadow: 2px 2px 5px grey;
+    margin-top: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+.HomeSignin:hover {
+    background: #8ac96f;
+}
+
+.HomeSignin p {
+    margin: 0;
+    font-family: Montserrat,sans-serif;
+    font-weight: 900;
+    margin-left: 5px;
+}
+
+@media (max-width: 720px) {
+
+    .HomeSignin {
+        display: none
+    }
+
+    .sortBy {
+        width: 99%;
+        
+    }
+
+}
+
 
 @media (max-width: 1130px) {
 
@@ -146,15 +232,18 @@ h1 {
 
     .BarGraph {
         margin: 10px auto;
-        width: 600px;
-        
+        width: 600px; 
+    }
+
+    .HomeSignin {
+        display: none;
     }
     
 }
 
 @media (max-width: 720px) {
     .BarGraph {
-        width: 95%;
+        width: 99%;
     }
 
     .Homepage {
@@ -166,12 +255,14 @@ h1 {
         width: 100%;
         margin: 0 auto;
     } 
+
+ 
 }
 
 @media (max-width: 770px) {
 
     .worstReviewed {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
         margin-top: 20px;
         
     }
