@@ -39,9 +39,7 @@ class HomePageWithAuth extends Component {
   };
 
   componentDidMount() {
-    // setTimeout(() => this.setState({isLoading: false}), 1000);
     this.complaints();
-
   }
 
   user = firebase.auth().currentUser;
@@ -128,7 +126,8 @@ class HomePageNoAuth extends Component {
   state = {
     complaintFeed: [],
     loading: true,
-    cardLoader: 6
+    cardLoader: 6,
+    highLightNumber: 2
   };
 
   componentDidMount() {
@@ -157,7 +156,62 @@ class HomePageNoAuth extends Component {
       });
   };
 
+  sortByUpvotes = () => {
+    var arr = this.state.complaintFeed
+
+    for (let i=0; i<arr.length; i++) {
+      console.log(arr[i]["upVote"])
+
+      for (let j=0; j<arr.length - 1; j++) {
+        if (arr[j]["upVote"] < arr[j + 1]["upVote"]) {
+          var temp = arr[j]
+          arr[j] = arr[j+1]
+          arr[j+1] = temp
+        }
+      }
+    }
+
+    this.setState({complaintFeed: arr})
+  }
+
+  sortByCreatedAtReverse = () => {
+    var arr = this.state.complaintFeed
+
+    for (let i=0; i<arr.length; i++) {
+      for (let j=0; j<arr.length - 1; j++) {
+
+        if (arr[j]["createdAt"] > arr[j + 1]["createdAt"]) {
+          var temp = arr[j]
+          arr[j] = arr[j+1]
+          arr[j+1] = temp
+        }
+      }
+    }
+
+    this.setState({complaintFeed: arr})
+  }
+
+  sortByCreated = () => {
+    var arr = this.state.complaintFeed
+
+    for (let i=0; i<arr.length; i++) {
+      for (let j=0; j<arr.length - 1; j++) {
+
+        if (arr[j]["createdAt"] < arr[j + 1]["createdAt"]) {
+          var temp = arr[j]
+          arr[j] = arr[j+1]
+          arr[j+1] = temp
+        }
+      }
+    }
+
+    this.setState({complaintFeed: arr})
+  }
+
   render() {
+
+   
+
     if(this.state.isLoading===true) {
       return (
       <div className="recording-loader loader">
@@ -194,17 +248,41 @@ class HomePageNoAuth extends Component {
                       Lowest Reviewed Businesses
                   </h1>
                   <div class="HomeWrapper">
-                  <div>                    
+                    
+                  <div>  
+                      <div className="sortBy">
+
+                        <div onClick={() => {this.sortByUpvotes(); this.setState({highLightNumber: 1})}} className={`sorterWrapper ${this.state.highLightNumber == 1 ? "highlightedTab" : null }`} >
+                          <i class="fas fa-chart-line sortIcon"></i><p> Top </p>
+                        </div>
+
+                        <div onClick={() => {this.sortByCreated(); this.setState({highLightNumber: 2})}} className={`sorterWrapper ${this.state.highLightNumber == 2 ? "highlightedTab" : null }`} >
+                          <i class="fas fa-certificate sortIcon"></i><p> Newest </p>
+                        </div>
+
+                        <div onClick={() => {this.sortByCreatedAtReverse(); this.setState({highLightNumber: 3})}} className={`sorterWrapper ${this.state.highLightNumber == 3 ? "highlightedTab" : null }`} >
+                          <i class="fas fa-angle-double-left sortIcon"></i><p> Oldest </p>
+                        </div>
+
+                      </div> 
+
                       {this.state.complaintFeed.map((card, i) => {
                           return <ComplaintCardNoAuth key={i} card={card}/> 
                       }).slice(0, this.state.cardLoader)}
                       {this.state.cardLoader > this.state.complaintFeed.length ? null : <button onClick={() => {this.setState({cardLoader: this.state.cardLoader + 5})}} className="LoadMoreFeed" >Load More</button> }
                   </div>
+
                   <div class="BarGraph" >
                     <div class="barContainer">
                       <Chart StoreArray={this.StoreNamess()}/>
                     </div>
+
+                      <div className="HomeSignin">
+                        <i class="fas fa-sign-in-alt"></i><p> Log In </p>
+                      </div>
+
                   </div>
+
                   </div>
                     </div> }
           </>

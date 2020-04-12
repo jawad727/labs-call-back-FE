@@ -16,14 +16,7 @@
   flex-direction: column;
 }
 
-.ProfileCardList div {
-  /* margin: 0px; */
-  /* margin: 10px; */
-  
-}
-
 .card-container {
-  margin: 10px;
   box-sizing: border-box;
 }
 
