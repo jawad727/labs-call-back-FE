@@ -30,7 +30,8 @@ class HomePageWithAuth extends Component {
   state = {
     complaintFeed: [],
     loading: true,
-    cardLoader: 6
+    cardLoader: 6,
+    highLightNumber: 2
   };
 
 
@@ -292,9 +293,9 @@ class HomePageNoAuth extends Component {
                 </div> :
 
               <div className='Homepage Container'>
-                <div class="button-container">
-              <Link class="centered" to='/complaint-form'>
-                  <button class="complaintButton">
+                <div className="button-container">
+              <Link className="centered" to='/complaint-form'>
+                  <button className="complaintButton">
                       
                       Leave A Review 
 
