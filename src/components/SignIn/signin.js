@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
+
 import { SignUpLink } from '../SignUp/signup.js';
 // import { PasswordForgetLink } from '../PasswordForget/passwordforget.js';
 import { withFirebase } from '../Firebase/index.js';
@@ -55,6 +56,10 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
 
     return (
+    <div>
+     
+     
+
       <form onSubmit={this.onSubmit}>
         
         <input
@@ -77,6 +82,7 @@ class SignInFormBase extends Component {
 
         {error && <p>{error.message}</p>}
       </form>
+    </div>
     );
   }
 }

@@ -106,7 +106,7 @@ class Form1 extends Component {
                 primary={true}
                 style={styles.button}
                 onClick={this.continue}
-                className="continue-btn"
+                
               />
               </div> }
               
