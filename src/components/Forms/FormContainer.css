@@ -10,11 +10,6 @@
     width: 75%;
 }
 
-/* .buttonform1contaier .continue-btn button {
- background-color: #593C8F !important;
-} */
-
-
 .form-container2 {
     display: flex;
     flex-direction: column;
@@ -34,12 +29,7 @@
     font-family: 'Alegreya Sans SC';
 }
 
-/* .searchbar-container {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+
   
   .searchTitle {
     margin-bottom: 50px;
@@ -119,6 +109,7 @@
 /********************
     Map Form Styles 
 ********************/
+
 #form-root, #map-form, #map {
     height: 100%;
 }
@@ -185,9 +176,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    
-    
+    /* height: 500px; */
 }
 
 .form1image {

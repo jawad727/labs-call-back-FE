@@ -5,6 +5,19 @@
   }
 
 
+.HelloHand {
+  width: 100px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.welcomeText {
+  font-family: Montserrat,sans-serif;
+  font-weight: 900;
+  margin: 10px;
+
+}
+
 .main-cont {
   height: 100vh;
 }
@@ -19,6 +32,7 @@
 
 .RTSlist {
   font-family: 'Didact Gothic';
+  
 }
 
 .LandingMobileButton {
@@ -67,10 +81,7 @@ header {
 
 .logo-two {
   position: absolute;
-  
-  
-  padding: 0px 9px 9px 6px;
-  
+  padding: 0px 9px 9px 6px; 
 }
 
 .doubleButton {
@@ -292,7 +303,6 @@ header {
 
 
 .innerSignin {
-  
   background-image: radial-gradient(lightgrey, white);
   border-radius: 5px;
   border: 1px solid lightgrey;

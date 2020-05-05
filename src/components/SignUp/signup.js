@@ -65,6 +65,8 @@ class SignUpFormBase extends Component {
     return (
       
       <form onSubmit={this.onSubmit}>
+
+     
         
         <input
           name="username"

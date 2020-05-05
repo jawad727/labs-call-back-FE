@@ -6,6 +6,7 @@ import axios from 'axios';
 import Navigation from '../Navigation/navigation.js';
 
 
+
 class SignInConfirmation extends Component {
     state = {
         docid: null
@@ -32,7 +33,11 @@ class SignInConfirmation extends Component {
                 <Navigation />
                 
                 <div class="signin">
-                
+
+                <img className="HelloHand" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Waving_Hand_Sign_Emoji_grande.png?v=1571606038" />
+                <h3 className="welcomeText"> Welcome to Griipe </h3>
+                <p>Log In to get started</p>
+
                   <div class="innerSignin">
                     <h2>sign in</h2>
                     <StyledFirebaseAuth 

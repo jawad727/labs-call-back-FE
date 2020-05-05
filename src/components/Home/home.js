@@ -30,13 +30,10 @@ class HomePageWithAuth extends Component {
   state = {
     complaintFeed: [],
     loading: true,
-    cardLoader: 6
+    cardLoader: 6,
+    highLightNumber: 2
   };
 
-
-  ProfilePush = () => {
-    this.props.history.push(`/edit-profile`);
-  };
 
   componentDidMount() {
     this.complaints();
@@ -44,10 +41,6 @@ class HomePageWithAuth extends Component {
 
   user = firebase.auth().currentUser;
 
-
-  ProfilePush = () => {
-    this.props.history.push(`/edit-profile`);
-  };
 
   StoreNamess = () => {
     return this.state.complaintFeed.map(item => {
@@ -69,6 +62,58 @@ class HomePageWithAuth extends Component {
   compareVotes = ( a, b ) => { if ( a.upVote < b.upVote ){ return -1;} if ( a.upVote > b.upVote ){return 1;} return 0;}
 
   sortedArray = () => {return this.state.complaintFeed.map((card, i) => {return <ComplaintCard complaintsCall={this.complaints}  key={i} card={card} />;}) }
+
+  sortByUpvotes = () => {
+    var arr = this.state.complaintFeed
+
+    for (let i=0; i<arr.length; i++) {
+      console.log(arr[i]["upVote"])
+
+      for (let j=0; j<arr.length - 1; j++) {
+        if (arr[j]["upVote"] < arr[j + 1]["upVote"]) {
+          var temp = arr[j]
+          arr[j] = arr[j+1]
+          arr[j+1] = temp
+        }
+      }
+    }
+
+    this.setState({complaintFeed: arr})
+  }
+
+  sortByCreatedAtReverse = () => {
+    var arr = this.state.complaintFeed
+
+    for (let i=0; i<arr.length; i++) {
+      for (let j=0; j<arr.length - 1; j++) {
+
+        if (arr[j]["createdAt"] > arr[j + 1]["createdAt"]) {
+          var temp = arr[j]
+          arr[j] = arr[j+1]
+          arr[j+1] = temp
+        }
+      }
+    }
+
+    this.setState({complaintFeed: arr})
+  }
+
+  sortByCreated = () => {
+    var arr = this.state.complaintFeed
+
+    for (let i=0; i<arr.length; i++) {
+      for (let j=0; j<arr.length - 1; j++) {
+
+        if (arr[j]["createdAt"] < arr[j + 1]["createdAt"]) {
+          var temp = arr[j]
+          arr[j] = arr[j+1]
+          arr[j+1] = temp
+        }
+      }
+    }
+
+    this.setState({complaintFeed: arr})
+  }
 
   render() {
 
@@ -103,6 +148,23 @@ class HomePageWithAuth extends Component {
           <h1 class="worstReviewed">Lowest Reviewed Businesses</h1>
           <div class="HomeWrapper">
             <div>
+{/* 
+              <div className="sortBy">
+
+                <div onClick={() => {this.sortByUpvotes(); this.setState({highLightNumber: 1})}} className={`sorterWrapper ${this.state.highLightNumber == 1 ? "highlightedTab" : null }`} >
+                  <i class="fas fa-chart-line sortIcon"></i><p> Top </p>
+                </div>
+
+                <div onClick={() => {this.sortByCreated(); this.setState({highLightNumber: 2})}} className={`sorterWrapper ${this.state.highLightNumber == 2 ? "highlightedTab" : null }`} >
+                  <i class="fas fa-certificate sortIcon"></i><p> Newest </p>
+                </div>
+
+                <div onClick={() => {this.sortByCreatedAtReverse(); this.setState({highLightNumber: 3})}} className={`sorterWrapper ${this.state.highLightNumber == 3 ? "highlightedTab" : null }`} >
+                  <i class="fas fa-angle-double-left sortIcon"></i><p> Oldest </p>
+                </div>
+
+              </div>  */}
+
               {this.sortedArray().reverse().slice(0, this.state.cardLoader)}
               {this.state.cardLoader > this.state.complaintFeed.length ? null : <button onClick={() => {this.setState({cardLoader: this.state.cardLoader + 5})}} className="LoadMoreFeed" >Load More</button> }
             </div>
@@ -235,9 +297,9 @@ class HomePageNoAuth extends Component {
                 </div> :
 
               <div className='Homepage Container'>
-                <div class="button-container">
-              <Link class="centered" to='/complaint-form'>
-                  <button class="complaintButton">
+                <div className="button-container">
+              <Link className="centered" to='/complaint-form'>
+                  <button className="complaintButton">
                       
                       Leave A Review 
 
@@ -276,7 +338,7 @@ class HomePageNoAuth extends Component {
                     <div class="barContainer">
                       <Chart StoreArray={this.StoreNamess()}/>
                     </div>
-                    <Link to="/">
+                    <Link to="/login">
                       <div className="HomeSignin">
                         <i class="fas fa-sign-in-alt"></i><p> Log In </p>
                       </div>
