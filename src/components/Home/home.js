@@ -148,7 +148,7 @@ class HomePageWithAuth extends Component {
           <h1 class="worstReviewed">Lowest Reviewed Businesses</h1>
           <div class="HomeWrapper">
             <div>
-
+{/* 
               <div className="sortBy">
 
                 <div onClick={() => {this.sortByUpvotes(); this.setState({highLightNumber: 1})}} className={`sorterWrapper ${this.state.highLightNumber == 1 ? "highlightedTab" : null }`} >
@@ -163,7 +163,7 @@ class HomePageWithAuth extends Component {
                   <i class="fas fa-angle-double-left sortIcon"></i><p> Oldest </p>
                 </div>
 
-              </div> 
+              </div>  */}
 
               {this.sortedArray().reverse().slice(0, this.state.cardLoader)}
               {this.state.cardLoader > this.state.complaintFeed.length ? null : <button onClick={() => {this.setState({cardLoader: this.state.cardLoader + 5})}} className="LoadMoreFeed" >Load More</button> }
@@ -195,6 +195,10 @@ class HomePageNoAuth extends Component {
   componentDidMount() {
     setTimeout(() => this.complaints(), 1000);
   }
+
+  ProfilePush = () => {
+    this.props.history.push(`/`);
+  };
 
   StoreNamess = () => {
     return this.state.complaintFeed.map(item => {
@@ -334,11 +338,11 @@ class HomePageNoAuth extends Component {
                     <div class="barContainer">
                       <Chart StoreArray={this.StoreNamess()}/>
                     </div>
-                      <Link  to="/login">
-                        <div className="HomeSignin">
-                          <i class="fas fa-sign-in-alt"></i><p> Log In </p>
-                        </div>
-                      </Link>
+                    <Link to="/login">
+                      <div className="HomeSignin">
+                        <i class="fas fa-sign-in-alt"></i><p> Log In </p>
+                      </div>
+                    </Link>
 
                   </div>
 

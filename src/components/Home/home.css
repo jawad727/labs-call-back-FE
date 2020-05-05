@@ -199,11 +199,6 @@ h1 {
     color: black;
 }
 
-.HomeSignin p {
-    color: black;
-    text-decoration: none;
-}
-
 .HomeSignin:hover {
     background: #8ac96f;
 }
