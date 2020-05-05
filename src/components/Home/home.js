@@ -135,7 +135,7 @@ class HomePageNoAuth extends Component {
   }
 
   ProfilePush = () => {
-    this.props.history.push(`/edit-profile`);
+    this.props.history.push(`/`);
   };
 
   StoreNamess = () => {
@@ -276,10 +276,11 @@ class HomePageNoAuth extends Component {
                     <div class="barContainer">
                       <Chart StoreArray={this.StoreNamess()}/>
                     </div>
-
+                    <Link to="/">
                       <div className="HomeSignin">
                         <i class="fas fa-sign-in-alt"></i><p> Log In </p>
                       </div>
+                    </Link>
 
                   </div>
 
