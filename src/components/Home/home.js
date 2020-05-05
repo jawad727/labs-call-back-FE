@@ -148,22 +148,22 @@ class HomePageWithAuth extends Component {
           <h1 class="worstReviewed">Lowest Reviewed Businesses</h1>
           <div class="HomeWrapper">
             <div>
-{/* 
+
               <div className="sortBy">
 
-                <div onClick={() => {this.sortByUpvotes(); this.setState({highLightNumber: 1})}} className={`sorterWrapper ${this.state.highLightNumber == 1 ? "highlightedTab" : null }`} >
+                <div onClick={() => {this.sortByUpvotes(); this.setState({highLightNumber: 1})}} className={`sorterWrapper ${this.state.highLightNumber == 1 ? "highlightedTab" : "" }`} >
                   <i class="fas fa-chart-line sortIcon"></i><p> Top </p>
                 </div>
 
-                <div onClick={() => {this.sortByCreated(); this.setState({highLightNumber: 2})}} className={`sorterWrapper ${this.state.highLightNumber == 2 ? "highlightedTab" : null }`} >
+                <div onClick={() => {this.sortByCreated(); this.setState({highLightNumber: 2})}} className={`sorterWrapper ${this.state.highLightNumber == 2 ? "highlightedTab" : "" }`} >
                   <i class="fas fa-certificate sortIcon"></i><p> Newest </p>
                 </div>
 
-                <div onClick={() => {this.sortByCreatedAtReverse(); this.setState({highLightNumber: 3})}} className={`sorterWrapper ${this.state.highLightNumber == 3 ? "highlightedTab" : null }`} >
+                <div onClick={() => {this.sortByCreatedAtReverse(); this.setState({highLightNumber: 3})}} className={`sorterWrapper ${this.state.highLightNumber == 3 ? "highlightedTab" : "" }`} >
                   <i class="fas fa-angle-double-left sortIcon"></i><p> Oldest </p>
                 </div>
 
-              </div>  */}
+              </div> 
 
               {this.sortedArray().reverse().slice(0, this.state.cardLoader)}
               {this.state.cardLoader > this.state.complaintFeed.length ? null : <button onClick={() => {this.setState({cardLoader: this.state.cardLoader + 5})}} className="LoadMoreFeed" >Load More</button> }
